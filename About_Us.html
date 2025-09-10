@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TravelSmart</title>
+    <link rel="icon" type="image/png" href="assets/images/Favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/About_Us.css">
+    <link rel="stylesheet" href="assets/Css/About_Us.css">
    <style>
        
     </style>
@@ -18,7 +19,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo-container">
-            <a href="./index.html" class="logo">
+            <a href="index.html" class="logo">
                 <i class="fas fa-globe-americas"></i>
                 TravelSmart
             </a>
@@ -31,15 +32,15 @@
                 <div class="lightning-effect"></div>
             </li>
             <li>
-                <a href="#">Trips</a>
+                <a href="Trips.html">Trips</a>
                 <div class="lightning-effect"></div>
             </li>
             <li>
-                <a href="#">Accommodations</a>
+                <a href="Accommodations.html">Accommodations</a>
                 <div class="lightning-effect"></div>
             </li>
             <li>
-                <a href="#">Transport</a>
+                <a href="Transport.html">Transport</a>
                 <div class="lightning-effect"></div>
             </li>
             <li>
@@ -55,7 +56,7 @@
                 <div class="lightning-effect"></div>
             </li>
             <li>
-                <a href="#">Sitemap</a>
+                <a href="sitemap.html">Sitemap</a>
                 <div class="lightning-effect"></div>
             </li>
         </ul>
@@ -224,7 +225,7 @@
             <div class="team-member">
                 <img src="./assets/images/anus.jpg" alt="Anus Image" class="member-img">
                 <div class="member-info">
-                    <h3>Muhammad Anus</h3>
+                    <h3>Muhammad Anas</h3>
                     <p>Team Leader</p>
                     <div class="member-social">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -319,14 +320,13 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="#">Trips</a></li>
-                    <li><a href="#">Accommodations</a></li>
-                    <li><a href="#">Transport</a></li>
-                    <li><a href="./Reviews.html">Reviews</a></li>
-                    <li><a href="./About_Us.html">About</a></li>
-                    <li><a href="./Contact_Us.html">Contact</a></li>
-                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Trips.html">Trips</a></li>
+                    <li><a href="Accommodations.html">Accommodations</a></li>
+                    <li><a href="Transport.html">Transport</a></li>
+                    <li><a href="Reviews.html">Reviews</a></li>
+                    <li><a href="About_Us.html">About</a></li>
+                    <li><a href="Contact_Us.html">Contact</a></li>
                 </ul>
             </div>
             
@@ -358,81 +358,6 @@
         </div>
     </footer>
 
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Mobile menu toggle
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Timeline animation
-        function checkTimelineItems() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            timelineItems.forEach(item => {
-                const itemTop = item.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (itemTop < windowHeight * 0.85) {
-                    item.classList.add('visible');
-                }
-            });
-        }
-        
-        // Initial check on page load
-        window.addEventListener('load', checkTimelineItems);
-        
-        // Check on scroll
-        window.addEventListener('scroll', checkTimelineItems);
-        
-        // Counter animation for stats
-        function animateCounter(element, target, duration) {
-            let startTime = null;
-            const startValue = 0;
-            
-            function animationStep(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                const value = Math.floor(progress * (target - startValue) + startValue);
-                element.textContent = value.toLocaleString() + (element.id === 'stat4' ? '%' : '');
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(animationStep);
-                }
-            }
-            
-            window.requestAnimationFrame(animationStep);
-        }
-        
-        function checkStats() {
-            const statSection = document.querySelector('.stats-section');
-            const statSectionTop = statSection.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (statSectionTop < windowHeight * 0.75) {
-                animateCounter(document.getElementById('stat1'), 13, 2000);
-                animateCounter(document.getElementById('stat2'), 2500000, 2000);
-                animateCounter(document.getElementById('stat3'), 120, 2000);
-                animateCounter(document.getElementById('stat4'), 98, 2000);
-                
-                // Remove the event listener after animation triggers
-                window.removeEventListener('scroll', checkStats);
-            }
-        }
-        
-        window.addEventListener('scroll', checkStats);
-    </script>
+   <script src="assets/Js/Abouy-Us.js"></script>
 </body>
 </html>
